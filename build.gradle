@@ -1,17 +1,24 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 group = 'org.safaricom'
 version = '1.0-SNAPSHOT'
+mainClassName = 'App'
 
 repositories {
     mavenCentral()
 }
 
-dependencies {
-    testImplementation platform('org.junit:junit-bom:5.9.1')
+dependencies {    testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+    implementation 'org.apache.spark:spark-core_2.13:3.4.0'
+    implementation 'com.sparkjava:spark-template-handlebars:2.7.1'
+    implementation 'org.slf4j:slf4j-simple:1.7.21'
+    implementation 'org.postgresql:postgresql:42.6.0'
+    testImplementation 'org.slf4j:slf4j-simple:2.0.7'
+    implementation 'org.sql2o:sql2o:1.6.0'
 }
 
 test {
